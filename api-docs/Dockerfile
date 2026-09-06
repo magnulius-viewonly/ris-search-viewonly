@@ -8,7 +8,7 @@ COPY . ./
 RUN pnpm ci
 RUN pnpm build
 
-FROM cgr.dev/chainguard/nginx@sha256:68aeaafe779ad616e80a4e63f223f42b20d5d4673fd2014a69dbdcadc57a267d
+FROM cgr.dev/chainguard/nginx@sha256:b91cf888522ed0cc1b6bddadfa8320ac2a131a1003b103ae340217a421f12fcc
 COPY --from=builder /app/dist /usr/share/nginx/html
 # Replace the default server configuration of the base nginx image.
 COPY nginx.conf /etc/nginx/conf.d/default.conf
